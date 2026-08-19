@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+.title-with-line {
+  position: relative;
+  padding-bottom: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+/* Removed title-with-line::after to get rid of the line below titles as requested */
+
+@theme {
+  --color-brand-cream: #FDFBF7;
+  --color-brand-wine: #801818;
+  --color-brand-charcoal: #1C1A17;
+  --color-brand-gold: #F5C242;
+
+  --font-serif-elegant: 'Cinzel', 'Playfair Display', serif;
+  --font-sans-clean: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #FDFBF7;
+  color: #1C1A17;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Footer dark theme overrides */
+.footer-dark {
+  background-color: #0e0e0e;
+  color: #e5e2e1;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pizza Box - Maestros de la Pizza</title>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&amp;family=Anton&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "tertiary": "#6ad4f4",
+                            "inverse-primary": "#c00014",
+                            "tertiary-fixed": "#b3ebff",
+                            "surface-dim": "#131313",
+                            "surface": "#131313",
+                            "secondary": "#ddfcff",
+                            "on-secondary-fixed-variant": "#004f54",
+                            "tertiary-container": "#229dbc",
+                            "on-tertiary-fixed": "#001f27",
+                            "primary-container": "#ff544b",
+                            "inverse-surface": "#e5e2e1",
+                            "surface-tint": "#ffb4ab",
+                            "on-surface": "#e5e2e1",
+                            "secondary-container": "#00f1fe",
+                            "on-background": "#e5e2e1",
+                            "outline": "#ae8883",
+                            "on-primary-fixed": "#410002",
+                            "on-error-container": "#ffdad6",
+                            "on-error": "#690005",
+                            "on-surface-variant": "#e7bcb8",
+                            "on-secondary-container": "#006a70",
+                            "inverse-on-surface": "#313030",
+                            "tertiary-fixed-dim": "#6ad4f4",
+                            "surface-container-low": "#1c1b1b",
+                            "error-container": "#93000a",
+                            "primary-fixed-dim": "#ffb4ab",
+                            "on-tertiary-fixed-variant": "#004e5f",
+                            "primary": "#ffb4ab",
+                            "background": "#131313",
+                            "on-secondary-fixed": "#002022",
+                            "surface-container": "#201f1f",
+                            "surface-container-highest": "#353534",
+                            "on-primary-container": "#5c0005",
+                            "on-tertiary": "#003642",
+                            "on-primary": "#690006",
+                            "surface-bright": "#3a3939",
+                            "surface-container-high": "#2a2a2a",
+                            "on-tertiary-container": "#002e3a",
+                            "surface-variant": "#353534",
+                            "primary-fixed": "#ffdad6",
+                            "on-primary-fixed-variant": "#93000c",
+                            "secondary-fixed": "#74f5ff",
+                            "secondary-fixed-dim": "#00dbe7",
+                            "on-secondary": "#00363a",
+                            "error": "#ffb4ab",
+                            "outline-variant": "#5e3f3c",
+                            "surface-container-lowest": "#0e0e0e"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "margin-desktop": "64px",
+                            "section-gap": "80px",
+                            "gutter": "24px",
+                            "base": "8px",
+                            "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                            "alfa": ["Alfa Slab One", "cursive"],
+                            "headline-lg": ["Anton"],
+                            "label-bold": ["Space Grotesk"],
+                            "headline-lg-mobile": ["Anton"],
+                            "body-md": ["Hanken Grotesk"],
+                            "label-sm": ["Space Grotesk"],
+                            "display-lg": ["Anton"],
+                            "body-lg": ["Hanken Grotesk"],
+                            "headline-md": ["Anton"]
+                    },
+                    "fontSize": {
+                            "headline-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+                            "label-bold": ["14px", { "lineHeight": "20px", "fontWeight": "700" }],
+                            "headline-lg-mobile": ["36px", { "lineHeight": "40px", "fontWeight": "400" }],
+                            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                            "display-lg": ["72px", { "lineHeight": "80px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+                            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                            "headline-md": ["32px", { "lineHeight": "36px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neon-shadow-primary {
+            box-shadow: 0 0 20px -5px rgba(255, 84, 75, 0.4);
+        }
+        .neon-border-focus:focus {
+            border-color: theme('colors.secondary-container');
+            box-shadow: 0 0 15px -3px rgba(0, 241, 254, 0.3);
+        }
+        .texture-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-white">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-full">
+<div class="flex items-center gap-4">
+<img alt="Pizza Box Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQxX-YNX2EPf41E9_i6gEPpq6nmOBCZW8vmK454FntXVtc9KYYcgBRRNw_6DrT6MnPDzntY-mQLivV9kLWpQ66UOEeVq0qNVIxoK69QwvWoq5I9lYL19rZKXVIJYYGJedDhUuj9DilIELPEmMV74FAAIIewCh0hw8wmBsNJ_eLVMJ5-HWvmrZ76czbseZvuuUefCd_xmam91FLZJgphiFc-NnBCrSS9mIxVUCLZtlMEHm81SzFZ5NqXxJlf_STW2tQMlpZaZmd9-tS"/>
+<span class="font-headline-md text-headline-md text-on-surface dark:text-on-surface hidden sm:block">PIZZA BOX</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-primary border-b-2 border-primary pb-1" href="#menu">Menú</a>
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#sedes">Sede Quirinal</a>
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#sedes">Sede Altico</a>
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#domicilios">Domicilios</a>
+</div>
+<button class="bg-primary-container text-white font-label-bold uppercase px-6 py-3 rounded scale-95 active:scale-90 transition-transform neon-shadow-primary hover:bg-primary transition-all duration-200">
+                Ver Menú
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center justify-center px-margin-mobile md:px-margin-desktop py-section-gap overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img src="images/hero-section.png" alt="Hero Section" class="w-full h-full object-cover">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+</div>
+<div class="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center gap-8">
+<h1 class="font-alfa text-display-lg md:text-[96px] md:leading-[100px] text-white tracking-wider uppercase text-shadow-xl drop-shadow-2xl">
+                    PIZZA <br/> <span class="text-primary-container">BOX</span>
+</h1>
+<p class="font-body-lg text-body-lg md:text-2xl text-on-surface-variant max-w-2xl">
+                    Estás a unos clics de disfrutar una experiencia única.
+                </p>
+<button class="mt-4 bg-primary-container text-white font-label-bold text-lg uppercase px-10 py-5 rounded-lg neon-shadow-primary hover:bg-primary transition-all duration-300 transform hover:-translate-y-1">
+                    Ver Menú Digital
+                </button>
+</div>
+<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce opacity-50 hidden md:block">
+<span class="material-symbols-outlined text-4xl">keyboard_arrow_down</span>
+</div>
+</section>
+<!-- Pizza Master Section (Nuestras Estrellas) -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low texture-bg relative" id="estrellas">
+<div class="absolute inset-0 z-0 flex items-center justify-center opacity-5 pointer-events-none">
+<img alt="Maestro Watermark" class="w-2/3 max-w-3xl filter grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQxX-YNX2EPf41E9_i6gEPpq6nmOBCZW8vmK454FntXVtc9KYYcgBRRNw_6DrT6MnPDzntY-mQLivV9kLWpQ66UOEeVq0qNVIxoK69QwvWoq5I9lYL19rZKXVIJYYGJedDhUuj9DilIELPEmMV74FAAIIewCh0hw8wmBsNJ_eLVMJ5-HWvmrZ76czbseZvuuUefCd_xmam91FLZJgphiFc-NnBCrSS9mIxVUCLZtlMEHm81SzFZ5NqXxJlf_STW2tQMlpZaZmd9-tS"/>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto">
+<div class="mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-end border-b border-outline-variant/30 pb-6">
+<h2 class="font-headline-lg text-headline-lg uppercase text-white">Nuestras <span class="text-secondary-container">Estrellas</span></h2>
+<p class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest mt-4 md:mt-0">Las joyas de la corona</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Featured Winner -->
+<div class="col-span-1 lg:col-span-7 bg-surface border border-outline-variant/30 rounded-xl overflow-hidden group relative hover:border-primary-container/50 transition-colors duration-500">
+<div class="absolute top-6 left-6 z-20 bg-secondary-container/10 border border-secondary-container text-secondary-container font-label-bold text-xs uppercase px-3 py-1 rounded-full backdrop-blur-md">
+                            Ganadora 2025
+                        </div>
+<div class="h-64 md:h-96 w-full overflow-hidden">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" data-alt="A close-up, premium lifestyle shot of a gourmet pizza featuring a thick, artisanal sourdough crust with distinct leopard spotting from a high-heat oven. The toppings include creamy burrata cheese, caramelized pears, and a delicate drizzle of thick balsamic glaze, contrasting against a dark, slate surface. Lighting is dramatic and directional, emphasizing the textures and creating an upscale, contemporary culinary vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwTnnA7zk_q99aQSHn9zPX3EYVk18aloG-uydnnY4mjgDW2SvcSumoT1ByW0t1HjHNZARt2LDwf2uGB5CBDVrzPkQK3Tt5D-IBujlu0gN22g-vd1iKCQ45mYUQqVHNEnkX7cjXK5CQv4PIFkEvI9lIVbIITz9WgMZ9jrGLbnQdalTuPB3pt22FL6H40ZTaHUfu9DEb2xWdz620YcWvd0UG_B_EyB97A5yGJskMeYxN4RutbUfuhtHPTicLR24vMpzzreoYyN9GnDab"/>
+</div>
+<div class="p-8 md:p-10 flex flex-col gap-4">
+<h3 class="font-headline-md text-headline-md text-white uppercase">La Roma</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                Pizza artesanal de masa madre con una base de crema de trufa, mozzarella de búfala fundida, finas rodajas de prosciutto di Parma, peras caramelizadas y un delicado hilo de balsámico envejecido. Una sinfonía de sabores dulces y salados.
+                            </p>
+<div class="mt-4 flex justify-between items-center">
+<span class="font-label-bold text-label-bold text-primary-container text-lg">42.900 COP</span>
+<button class="text-white hover:text-primary-container transition-colors p-2"><span class="material-symbols-outlined text-3xl">add_circle</span></button>
+</div>
+</div>
+</div>
+<!-- Previous Winners Stack -->
+<div class="col-span-1 lg:col-span-5 flex flex-col gap-gutter">
+<!-- La Torino -->
+<div class="bg-surface border border-outline-variant/30 rounded-xl p-6 flex items-center gap-6 group hover:border-secondary-container/50 transition-colors">
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A moody, high-contrast overhead shot of a classic Neapolitan pizza with blistered edges, rich red tomato sauce, and scattered fresh basil leaves on a dark industrial background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAL4mXBXcSBvwfrP4VEiTZeK71J_tlXB1CIzg-_JEjdACDT-NOrGNI0bnBNQQicgQLv3WZmSTrFr6kHihcuqckcQJyrrmTpKkwWDvp6IFsY2HdmJB60XiezV6UNtkolF6WlLusiKVZGkL8DiW_4b3OqTJs9BzxHi-qy3W7esY0MqNPmWMebQpxDzjcyNs1nw48FPNNNggC_z4YN9nOAMym6RaHxQ31Eklo0dvWUsi_pHiG9zJxqwf0_hARwelJ-88xE-UaYIpTpVQz"/>
+</div>
+<div class="flex-1">
+<div class="text-xs font-label-bold text-secondary-container mb-1 uppercase tracking-wider">Ganadora 2024</div>
+<h4 class="font-headline-md text-xl text-white uppercase mb-2">La Torino</h4>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-2">Salsa San Marzano, fior di latte, nduja picante y miel caliente.</p>
+</div>
+</div>
+<!-- Vesubio -->
+<div class="bg-surface border border-outline-variant/30 rounded-xl p-6 flex items-center gap-6 group hover:border-secondary-container/50 transition-colors">
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A rustic, premium artisan pizza loaded with dark, caramelized onions, smoked mozzarella, and crispy pancetta, sitting on a black stone board under dramatic studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh7awOCbjEUXAzk968UjS4yo3iX8mWXX3HQagJvVL6ZJBw8h_hslqj7rSO8fz2NlUg0X6MJK-t3eA-RDc9Wt_hptWuJCMHH7f55CiTZmPVKCW9bOic7Yd6EyXlQLB8qR4vwydDgInFG5ULMPx--_bswWd0h9U4TfDW2vb0U1vxXv5SWMSFzY2hhUskul0kl4Ln1jL5iCWSbU9FccFQRLqJ8bqnUWKfZPXL92p-jt8EFNExny4tYSSN-Js0ZbkqLT-rvblJCIzm2diD"/>
+</div>
+<div class="flex-1">
+<div class="text-xs font-label-bold text-on-surface-variant mb-1 uppercase tracking-wider">Favorita 2023</div>
+<h4 class="font-headline-md text-xl text-white uppercase mb-2">Vesubio</h4>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-2">Extra pepperoni artesanal, jalapeños encurtidos, cebolla morada y salsa sriracha.</p>
+</div>
+</div>
+<!-- Master -->
+<div class="bg-surface border border-outline-variant/30 rounded-xl p-6 flex items-center gap-6 group hover:border-secondary-container/50 transition-colors">
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A gourmet pizza featuring a rich white sauce base, roasted mushrooms, truffle oil drizzle, and fresh thyme, presented on a dark, flour-dusted metal peel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-fc72hShFzk5K6wSTpw5JfEKekj7gTm0DKwai1AOEp_81NtYckQZ3mFHPo7wicmMFoQDsf1rwop8WgsCt2-VFHJgptXgizlOmxffLtWoorIGGYpla2UydMPsEDERQT16Q703P4DYEOOu6MHVpHid9oKBmCWdRYxs3qprM26K-b7T7aSid8WzoDHxtpSq67VVS0yAWUeX5KexzTUznBu6yqupxR4-opa7ha5a1EtX6vHHTdUXRHVWg5SWxNt6HCVVTlWAlxQ2yUPHF"/>
+</div>
+<div class="flex-1">
+<div class="text-xs font-label-bold text-on-surface-variant mb-1 uppercase tracking-wider">Clásica 2022</div>
+<h4 class="font-headline-md text-xl text-white uppercase mb-2">Master</h4>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-2">Mezcla de 4 quesos premium, champiñones al ajillo y aceite de trufa blanca.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Menu Grid Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop" id="menu">
+<div class="max-w-7xl mx-auto flex flex-col gap-12">
+<div class="text-center">
+<h2 class="font-headline-lg text-headline-lg uppercase text-white mb-4">Elige tu <span class="text-primary-container">Sabor</span></h2>
+<div class="w-24 h-1 bg-primary-container mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Hawaiana Chic -->
+<div class="bg-surface border border-outline-variant/30 rounded-xl overflow-hidden flex flex-col group">
+<div class="h-48 overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A contemporary take on a Hawaiian pizza, featuring slow-roasted pineapple chunks, premium smoked ham, and a sprinkle of fresh cilantro on a dark charcoal crust, softly lit against a black background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVVoKY44eii3Xd0H7M3odgPAW7IhE64xV-ZZnzWC7OdbKhXaQssie4Ap14A4iLazBvQcnJIAG23sZtEUq5tvI4pWsSevB5NRBB4iRT2OL67o5ufLem5jbdG2fw-HUN36pGRqsIKHctwt9JFIXfGFkJB850iKEshGhN1jpTG2ZdD_P1NK0JH9Br7jLWZh2LTU_d0tO8UXOh99_N-n8DvQZD-KrVUJ7PHI6BsU4DI00kRAgyMytA_nVVwToqkT5fD_XBuJcOJQZELzuB"/>
+</div>
+<div class="p-6 flex-1 flex flex-col z-20 -mt-8">
+<h4 class="font-headline-md text-2xl text-white uppercase mb-2">Hawaiana Chic</h4>
+<p class="font-body-md text-sm text-on-surface-variant mb-4 flex-1">Jamón ahumado premium, piña asada al horno de leña, mozzarella y un toque de cilantro fresco.</p>
+<div class="flex justify-between items-end border-t border-outline-variant/30 pt-4 mt-auto">
+<span class="font-label-bold text-label-bold text-primary-container">34.900 COP</span>
+<button class="text-on-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined">shopping_cart</span></button>
+</div>
+</div>
+</div>
+<!-- Diávola -->
+<div class="bg-surface border border-outline-variant/30 rounded-xl overflow-hidden flex flex-col group">
+<div class="absolute top-4 right-4 z-30 bg-primary-container/10 border border-primary-container text-primary-container font-label-bold text-[10px] uppercase px-2 py-1 rounded-full backdrop-blur-md">
+                            Picante
+                        </div>
+<div class="h-48 overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A spicy artisanal pizza topped with vibrant red slices of spicy salami, fresh chili peppers, and melted mozzarella on a blistered crust, set against a dark moody tabletop with a subtle red neon glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvu8LnqdokRgqKTB0Hy8ofaryiUpD1bjsjRefT5bYvkJrUbl070_GkJV_r9U7AZ-mni6kNc9bxInJVDvGldxdhB8Y09kVRleC0oQ0XcLCdMGnSvZI0kQrxVykY_Or7bcZ03yx7GZ0O4fM2oHf7eCIlYkQSlVPe9f8evD_0cByvGVK-Vf3WtqApEvCX-v4_ssi5JST734np68K6tA_Os5_9U0vjoX-m_szxM5GwotZRVqFJwKR9Z0FffmEv0MmlKo86jqTyKZDO1BQm"/>
+</div>
+<div class="p-6 flex-1 flex flex-col z-20 -mt-8">
+<h4 class="font-headline-md text-2xl text-white uppercase mb-2">Diávola</h4>
+<p class="font-body-md text-sm text-on-surface-variant mb-4 flex-1">Salsa pomodoro picante, salami napolitano, peperoncino, aceitunas negras y mozzarella.</p>
+<div class="flex justify-between items-end border-t border-outline-variant/30 pt-4 mt-auto">
+<span class="font-label-bold text-label-bold text-primary-container">36.900 COP</span>
+<button class="text-on-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined">shopping_cart</span></button>
+</div>
+</div>
+</div>
+<!-- Dolce Burrata -->
+<div class="bg-surface border border-outline-variant/30 rounded-xl overflow-hidden flex flex-col group">
+<div class="h-48 overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="An elegant gourmet pizza showcasing a whole, creamy white burrata ball in the center, surrounded by fresh arugula, halved cherry tomatoes, and prosciutto on a dark, rustic wooden surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtr9wNzFAN1QnHSMOOj8PQYUayqk8lqFDnH9Kw1gAJOo5yt3BmYXvIsgTxwagpKenX1HmXCxVMkPfPUhV0bJSCWlWHwskd073iF7qJMrpdzRlq8JYIBQdG83NtQkJtOACWoo8kWi9wczZ5S61Fd7kqhSAPpCu08Ktq2xHdDTcnHrqdD_HSOMbgqWN7ijr3yXRWlpwJVPQqcb0YM2idBHAq8b_mPeDt28toNq2K2-ch-Dz9ApxhPI-0jsxQREx7SJMNFcrqmWfnniGu"/>
+</div>
+<div class="p-6 flex-1 flex flex-col z-20 -mt-8">
+<h4 class="font-headline-md text-2xl text-white uppercase mb-2">Dolce Burrata</h4>
+<p class="font-body-md text-sm text-on-surface-variant mb-4 flex-1">Base blanca, tomate cherry confitado, rúcula fresca, prosciutto y una burrata entera en el centro.</p>
+<div class="flex justify-between items-end border-t border-outline-variant/30 pt-4 mt-auto">
+<span class="font-label-bold text-label-bold text-primary-container">45.900 COP</span>
+<button class="text-on-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined">shopping_cart</span></button>
+</div>
+</div>
+</div>
+<!-- Peperoni -->
+<div class="bg-surface border border-outline-variant/30 rounded-xl overflow-hidden flex flex-col group">
+<div class="absolute top-4 right-4 z-30 bg-secondary-container/10 border border-secondary-container text-secondary-container font-label-bold text-[10px] uppercase px-2 py-1 rounded-full backdrop-blur-md">
+                            Popular
+                        </div>
+<div class="h-48 overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A classic pepperoni pizza heavily layered with small, cupping pepperoni slices that have crispy edges, resting on a pool of melted cheese and rich tomato sauce, set against a stark black background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjoCfbtIMjoKIi6HKvfc1_mLjcwaKPD7PHKnASfC0wh2t0OrodT-_u-LiaWWxzP5Pgm5tHLK4bgFnZuR8DLmSX4YN-JGdLZQYnoihb4NVv1g_a3YNxTvNH-_f0i0D3nK8Fyu_qlyOhOQHHMPzFv9hOePBIw5fsTDyQKsnc4U2nIQ_-4mXAyqJ6pPe6QzXigSWABown8ZsdQQFqktoYVYC53Quo13-pHcsx9rCZKazXll_mRKlbPavwyt-tTl5x2tLl1lStz1yh1B2Q"/>
+</div>
+<div class="p-6 flex-1 flex flex-col z-20 -mt-8">
+<h4 class="font-headline-md text-2xl text-white uppercase mb-2">Peperoni</h4>
+<p class="font-body-md text-sm text-on-surface-variant mb-4 flex-1">Nuestra versión del clásico con doble pepperoni madurado, extra queso mozzarella y toque de orégano.</p>
+<div class="flex justify-between items-end border-t border-outline-variant/30 pt-4 mt-auto">
+<span class="font-label-bold text-label-bold text-primary-container">32.900 COP</span>
+<button class="text-on-surface-variant hover:text-white transition-colors"><span class="material-symbols-outlined">shopping_cart</span></button>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-8">
+<button class="border-2 border-white text-white font-label-bold uppercase px-8 py-4 rounded hover:bg-white hover:text-background transition-all duration-300">
+                        Ver Menú Completo
+                    </button>
+</div>
+</div>
+</section>
+<!-- Sedes / Locations -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-high border-y border-outline-variant/20 relative overflow-hidden" id="sedes">
+<!-- Subtle Neon Glow -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg uppercase text-white mb-4">Nuestras <span class="text-white opacity-50">Sedes</span></h2>
+<p class="font-body-lg text-on-surface-variant">Ven a vivir la experiencia artesanal.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Quirinal Card -->
+<div class="bg-surface border border-outline-variant/30 rounded-xl p-8 flex flex-col gap-6 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary-container transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500"></div>
+<div class="flex items-start justify-between">
+<div>
+<h3 class="font-headline-md text-3xl text-white uppercase tracking-wide mb-2">Quirinal</h3>
+<p class="font-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-sm">location_on</span>
+                                    Avenida Tenerife Calle 21 con 7A esquina.
+                                </p>
+</div>
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center border border-outline-variant/30">
+<span class="material-symbols-outlined text-white">storefront</span>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 pt-6 mt-2">
+<p class="font-label-bold text-label-bold uppercase text-on-surface-variant mb-2">Reservas y Pedidos:</p>
+<a class="font-headline-md text-2xl text-secondary-container hover:text-white transition-colors flex items-center gap-3" href="tel:6088662538">
+<span class="material-symbols-outlined">call</span> 608 8662538
+                            </a>
+</div>
+</div>
+<!-- Altico Card -->
+<div class="bg-surface border border-outline-variant/30 rounded-xl p-8 flex flex-col gap-6 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-secondary-container transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500"></div>
+<div class="flex items-start justify-between">
+<div>
+<h3 class="font-headline-md text-3xl text-white uppercase tracking-wide mb-2">Altico</h3>
+<p class="font-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container text-sm">location_on</span>
+                                    Calle 6 con Carrera 14 esquina.
+                                </p>
+</div>
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center border border-outline-variant/30">
+<span class="material-symbols-outlined text-white">storefront</span>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 pt-6 mt-2">
+<p class="font-label-bold text-label-bold uppercase text-on-surface-variant mb-2">Reservas y Pedidos:</p>
+<a class="font-headline-md text-2xl text-secondary-container hover:text-white transition-colors flex items-center gap-3" href="tel:3134012480">
+<span class="material-symbols-outlined">call</span> 313 401 2480
+                            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-section-gap border-t border-outline-variant relative overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-5">
+<span class="font-headline-lg text-[150px] leading-none text-white whitespace-nowrap">MAESTROS DE LA PIZZA</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto relative z-10">
+<!-- Brand & Copyright -->
+<div class="flex flex-col gap-4">
+<img alt="Pizza Box Logo" class="h-16 w-auto object-contain self-start opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQxX-YNX2EPf41E9_i6gEPpq6nmOBCZW8vmK454FntXVtc9KYYcgBRRNw_6DrT6MnPDzntY-mQLivV9kLWpQ66UOEeVq0qNVIxoK69QwvWoq5I9lYL19rZKXVIJYYGJedDhUuj9DilIELPEmMV74FAAIIewCh0hw8wmBsNJ_eLVMJ5-HWvmrZ76czbseZvuuUefCd_xmam91FLZJgphiFc-NnBCrSS9mIxVUCLZtlMEHm81SzFZ5NqXxJlf_STW2tQMlpZaZmd9-tS"/>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">
+                    © 2025 Pizza Box Neiva - Maestros de la Pizza.
+                </p>
+</div>
+<!-- Locations Links -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-bold text-label-bold uppercase text-white mb-2 tracking-widest">Nuestras Sedes</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-white hover:underline decoration-primary opacity-80 hover:opacity-100 transition-all flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Sede Quirinal: Calle 18 # 5-44
+                </a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-white hover:underline decoration-primary opacity-80 hover:opacity-100 transition-all flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Sede Altico: Carrera 12 # 6-21
+                </a>
+</div>
+<!-- Contact & Socials -->
+<div class="flex flex-col gap-3" id="domicilios">
+<h4 class="font-label-bold text-label-bold uppercase text-white mb-2 tracking-widest">Contacto</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-white hover:underline decoration-primary opacity-80 hover:opacity-100 transition-all flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[16px]">chat</span> WhatsApp: +57 300 000 0000
+                </a>
+<div class="flex gap-4 mt-2">
+<a class="w-10 h-10 rounded-full bg-surface border border-outline-variant flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-colors" href="#">
+<span class="font-label-bold">IG</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface border border-outline-variant flex items-center justify-center text-on-surface-variant hover:text-secondary-container hover:border-secondary-container transition-colors" href="#">
+<span class="font-label-bold">FB</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
+
+
+

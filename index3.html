@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contacto | PIZZA BOX - Maestros de la Pizza</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@400;500;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#5e3f3c",
+                        "on-primary-fixed": "#410002",
+                        "surface-variant": "#353534",
+                        "surface-tint": "#ffb4ab",
+                        "on-primary": "#690006",
+                        "on-tertiary-fixed": "#001f27",
+                        "on-surface": "#e5e2e1",
+                        "outline": "#ae8883",
+                        "inverse-surface": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "secondary-fixed": "#74f5ff",
+                        "secondary": "#ddfcff",
+                        "on-secondary-fixed": "#002022",
+                        "tertiary-fixed": "#b3ebff",
+                        "primary-fixed-dim": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-fixed-variant": "#004e5f",
+                        "on-primary-container": "#5c0005",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary": "#003642",
+                        "on-secondary": "#00363a",
+                        "on-secondary-fixed-variant": "#004f54",
+                        "on-primary-fixed-variant": "#93000c",
+                        "surface-bright": "#3a3939",
+                        "on-secondary-container": "#006a70",
+                        "inverse-primary": "#c00014",
+                        "surface-container-highest": "#353534",
+                        "background": "#131313",
+                        "tertiary": "#6ad4f4",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#229dbc",
+                        "surface-container": "#201f1f",
+                        "surface-container-low": "#1c1b1b",
+                        "on-surface-variant": "#e7bcb8",
+                        "primary": "#ffb4ab",
+                        "surface": "#131313",
+                        "tertiary-fixed-dim": "#6ad4f4",
+                        "surface-dim": "#131313",
+                        "secondary-fixed-dim": "#00dbe7",
+                        "primary-container": "#ff544b",
+                        "on-tertiary-container": "#002e3a",
+                        "on-error": "#690005",
+                        "secondary-container": "#00f1fe",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "80px",
+                        "base": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Anton"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Anton"],
+                        "display-lg": ["Anton"],
+                        "label-sm": ["Space Grotesk"],
+                        "label-bold": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Anton"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "36px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["36px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neon-glow-red {
+            box-shadow: 0 0 20px rgba(255, 49, 49, 0.3);
+        }
+        .neon-border-blue:focus {
+            border-color: #00dbe7;
+            box-shadow: 0 0 10px rgba(0, 219, 231, 0.4);
+        }
+        .charcoal-texture {
+            background-image: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+            position: relative;
+        }
+        .charcoal-texture::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            pointer-events: none;
+            background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-full">
+<div class="font-headline-md text-headline-md text-on-surface dark:text-on-surface tracking-tighter">
+                PIZZA BOX
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#">Menu</a>
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#">Sede Quirinal</a>
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#">Sede Altico</a>
+<a class="font-label-bold text-label-bold uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors duration-300" href="#">Domicilios</a>
+</div>
+<button class="bg-primary-container text-on-primary-container font-label-bold text-label-bold px-6 py-2 rounded-full scale-95 active:scale-90 transition-transform uppercase tracking-widest neon-glow-red">
+                Ver Menú
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+<img alt="Pizza artesanal en un horno de piedra con luz dramática" class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700 scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLuSMja94BHeb-9tX76Zdg9oSz-c0filLsBH-_tp49JTR4xc_qk1PMhoxhy8vYtiXwBvV8mEjFFQOrx0-c3neCd6TFF0BTLWl92fnBy37aV3Ss-QqPInSiqxwDZ1KLb71SG_R7MlgVAHbLEgZHXM9VlCFCEcKU84zuMCa9f3UbD_o5DipA3yN4Fg0qMgr03I_dSDwlnjP_ipRAZKLAYk-4wfmPfzeWQSlfX6njOV_ysb9DlfZWdrQNE-HUx5"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
+<div class="relative z-10 text-center px-margin-mobile">
+<h1 class="font-display-lg text-display-lg text-primary uppercase tracking-tighter mb-4 max-w-4xl mx-auto leading-none drop-shadow-2xl">
+                    CONÉCTATE CON LOS MAESTROS
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    La tradición de la masa madre y el fuego nos une. Encuéntranos en el corazón de Neiva.
+                </p>
+</div>
+</section>
+<!-- Locations Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<div class="flex items-center gap-4 mb-12">
+<div class="h-px flex-1 bg-outline-variant/30"></div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface shrink-0">Nuestras Sedes</h2>
+<div class="h-px flex-1 bg-outline-variant/30"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Sede Quirinal -->
+<div class="bg-surface-container-high rounded-xl overflow-hidden border border-outline-variant/20 group">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Modern artisanal pizzeria interior in Neiva, Colombia, showcasing dark industrial aesthetics with warm ambient lighting and sleek furniture. The atmosphere is sophisticated yet welcoming, featuring exposed brick elements and stylish decor consistent with the Pizza Box brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz0aXb-5-nT1WgYnP_0fGYQdcTfd4vaqjXo2gMolZ3ZEi9lxhUPdFo3RK3SnEsg8ns25YG4wmHTyG4T5AOP7CfTBcW4fATy52kkj2nmvLEJcdQPTobHNru3kIeIeBnPTOQpTSDGgfMit8Y4BfWcZLog_wa-jj38VCd2m6uPUCHDvoo61oJUxibGkpTYRkMdApKgz9xRcf3jC6bk9bdyV8LX5WK5FlR-Vx6dWlpgILN80zHrYXP7hb3nZLa8hGT7SGq_zZ3ouGvoSRZ"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary uppercase mb-2">Sede Quirinal</h3>
+<p class="font-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-primary scale-75">location_on</span>
+                                    Avenida Tenerife Calle 21 con 7A esquina
+                                </p>
+</div>
+<span class="bg-tertiary/10 text-tertiary border border-tertiary/30 font-label-sm text-label-sm px-3 py-1 rounded-full uppercase">Principal</span>
+</div>
+<div class="flex items-center gap-4 mt-8">
+<a class="flex-1 text-center bg-transparent border border-on-surface font-label-bold text-label-bold py-4 rounded-lg hover:bg-on-surface hover:text-background transition-all" href="tel:+573193717988">
+                                LLAMAR: 319 371 7988
+                            </a>
+<div class="w-12 h-12 bg-surface flex items-center justify-center rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-on-surface-variant">map</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sede Altico -->
+<div class="bg-surface-container-high rounded-xl overflow-hidden border border-outline-variant/20 group">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Exterior view of a trendy urban pizzeria at night with glowing neon signage and large windows revealing a warm, bustling interior. The architecture combines industrial materials with modern design, creating a high-end underground vibe that matches the Maestro de la Pizza theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7MMt3IU5m1fjrEQpqLxJIMCTmr-RkHjhctNAV89e3GFgItS44y30dzxLD4XFTnjzDrR9RO_SkJT2zZJEpo-O96ubATLS7sPinIsbRwdH9eCD5flOKZ8IxYvdGCgy263RkqP6JJqrHv9jnjoP8H6yMDRViC5zNjwrunA4OzC7sgo-AQymdn_BswYhXTE5OGxgaWNybeCOO0DRIvNRBOj1jtXZY7nQuXX4NUK5cChHiMCCwfMJwI2vbibkyjmTDeqcH_77jgHohUmnL"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary uppercase mb-2">Sede Altico</h3>
+<p class="font-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-primary scale-75">location_on</span>
+                                    Calle 6 con Carrera 14 esquina
+                                </p>
+</div>
+</div>
+<div class="flex items-center gap-4 mt-8">
+<a class="flex-1 text-center bg-transparent border border-on-surface font-label-bold text-label-bold py-4 rounded-lg hover:bg-on-surface hover:text-background transition-all" href="tel:+573134012480">
+                                LLAMAR: 313 401 2480
+                            </a>
+<div class="w-12 h-12 bg-surface flex items-center justify-center rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-on-surface-variant">map</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Digital Channels Section -->
+<section class="bg-surface-container-lowest py-section-gap">
+<div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter items-center">
+<div class="lg:col-span-1">
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase mb-4">Canales Digitales</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Pide en línea o síguenos para ver nuestras creaciones diarias.</p>
+<div class="flex flex-wrap gap-4">
+<a class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.03 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.27 1.76-.23.84-.13 1.78.32 2.53.4.75 1.1 1.34 1.96 1.55.71.16 1.47.1 2.11-.22.86-.42 1.49-1.26 1.67-2.2.06-.39.06-.79.06-1.18V.02z"></path></svg>
+</a>
+<a class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300" href="#">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg>
+</a>
+</div>
+</div>
+<div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<a class="group flex flex-col p-8 bg-surface border border-outline-variant/20 rounded-xl hover:border-secondary transition-all" href="https://wa.me/573193717988">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-background transition-colors">
+<span class="material-symbols-outlined">chat</span>
+</div>
+<span class="font-label-bold text-label-bold uppercase tracking-widest text-on-surface-variant">WhatsApp Quirinal</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface">319 371 7988</span>
+</a>
+<a class="group flex flex-col p-8 bg-surface border border-outline-variant/20 rounded-xl hover:border-secondary transition-all" href="https://wa.me/573134012480">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-background transition-colors">
+<span class="material-symbols-outlined">chat</span>
+</div>
+<span class="font-label-bold text-label-bold uppercase tracking-widest text-on-surface-variant">WhatsApp Altico</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface">313 401 2480</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Form Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase mb-6 leading-tight">Escríbele a la Logia del Queso</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">¿Tienes una propuesta, un evento o simplemente quieres darnos las gracias por esa masa perfecta? Déjanos tu mensaje y te responderemos antes de que la pizza se enfríe.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-6 p-6 border-l-2 border-primary bg-surface-container-low">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<div>
+<h4 class="font-label-bold text-label-bold uppercase text-on-surface">Horario de Atención</h4>
+<p class="font-body-md text-on-surface-variant">Lunes a Domingo: 4:00 PM - 10:30 PM</p>
+</div>
+</div>
+<div class="flex items-center gap-6 p-6 border-l-2 border-tertiary bg-surface-container-low">
+<span class="material-symbols-outlined text-tertiary">mail</span>
+<div>
+<h4 class="font-label-bold text-label-bold uppercase text-on-surface">Correo Corporativo</h4>
+<p class="font-body-md text-on-surface-variant">maestros@pizzabox.co</p>
+</div>
+</div>
+</div>
+</div>
+<form class="space-y-6 p-10 bg-surface-container-high rounded-xl border border-outline-variant/30">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold uppercase text-on-surface-variant ml-1">Nombre</label>
+<input class="w-full bg-background border border-outline-variant/30 rounded-lg p-4 font-body-md text-on-surface focus:outline-none focus:ring-0 focus:border-primary transition-colors" placeholder="Tu nombre" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold uppercase text-on-surface-variant ml-1">Email</label>
+<input class="w-full bg-background border border-outline-variant/30 rounded-lg p-4 font-body-md text-on-surface focus:outline-none focus:ring-0 focus:border-primary transition-colors" placeholder="tu@email.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold uppercase text-on-surface-variant ml-1">Asunto</label>
+<select class="w-full bg-background border border-outline-variant/30 rounded-lg p-4 font-body-md text-on-surface focus:outline-none focus:ring-0 focus:border-primary transition-colors appearance-none">
+<option>Reserva Especial</option>
+<option>Queja o Reclamo</option>
+<option>Eventos Corporativos</option>
+<option>Otro</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold uppercase text-on-surface-variant ml-1">Mensaje</label>
+<textarea class="w-full bg-background border border-outline-variant/30 rounded-lg p-4 font-body-md text-on-surface focus:outline-none focus:ring-0 focus:border-primary transition-colors resize-none" placeholder="¿Qué tienes en mente?" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md py-6 rounded-lg uppercase tracking-widest neon-glow-red hover:scale-[1.02] active:scale-[0.98] transition-all" type="submit">
+                        Enviar Mensaje
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant text-on-surface w-full py-section-gap relative overflow-hidden">
+<div class="absolute -bottom-10 left-1/2 -translate-x-1/2 font-headline-lg text-[180px] leading-none opacity-5 pointer-events-none uppercase whitespace-nowrap">
+            Maestros de la Pizza
+        </div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto relative z-10">
+<div class="space-y-6">
+<div class="font-headline-lg text-headline-lg text-primary tracking-tighter">PIZZA BOX</div>
+<p class="font-body-md text-on-surface-variant max-w-xs">Artesanos de la masa, maestros del fuego. La pizzería urbana que Neiva merecía.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-bold text-label-bold uppercase text-primary mb-4">Nuestras Casas</h4>
+<a class="block font-body-md text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">Sede Quirinal: Calle 18 # 5-44</a>
+<a class="block font-body-md text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">Sede Altico: Carrera 12 # 6-21</a>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-bold text-label-bold uppercase text-primary mb-4">Conecta</h4>
+<a class="block font-body-md text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">WhatsApp: +57 300 000 0000</a>
+<a class="block font-body-md text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">Instagram</a>
+<a class="block font-body-md text-on-surface-variant hover:text-on-surface hover:underline decoration-primary transition-all" href="#">Facebook</a>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-outline-variant/10 text-center px-margin-mobile">
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-80">© 2025 Pizza Box Neiva - Maestros de la Pizza.</p>
+</div>
+</footer>
+<script>
+        // Simple micro-interactions
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                // Potential sound effect or haptic trigger
+            });
+        });
+
+        // Form submission prevention for demo
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('¡Mensaje enviado a los maestros! Te contactaremos pronto.');
+        });
+    </script>
+</body></html>
